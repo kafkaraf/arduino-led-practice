@@ -1,0 +1,12 @@
+// Untuk mengecek treshold dari potential meter
+int potValue;
+
+void setup() {
+  Serial.begin(9600);       // buka komunikasi serial
+}
+
+void loop() {
+  potValue = analogRead(A0);   // baca nilai analog (0–1023)
+  Serial.println(potValue);    // tampilkan di Serial Monitor
+  delay(200);
+}
