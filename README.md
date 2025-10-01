@@ -1,1 +1,1 @@
-https://github.com/kafkaraf/arduino-led-practice/blob/97f6bcc4622fd5aa797a8aceb0a6cd7472063560/LED-Practice.jpg
+https://github.com/kafkaraf/arduino-led-practice/blob/c0465e6bbb8968a5658f098163f950953fb2af08/LED-Practice.jpg?raw=true
