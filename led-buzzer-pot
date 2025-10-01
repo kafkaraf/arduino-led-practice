@@ -1,0 +1,30 @@
+//Ini projek menyalakan led jika memutar potential meter dengan ketentuan, jika pada batas keterangan LED tertentu buzzer akan mengeluarkan suara
+// Tolls : LED. Resistor 330K, Buzzer, Potential Meter & Breadboard + Jumper Male to Male
+// Pin LED : 10 (+)
+// Pin Buzzer : 9 (+)
+// Potential Meter : A0 (+)
+
+
+const int led = 10;
+const int buzzer = 9;
+int pot;
+int brightness;
+
+void setup() {
+	pinMode(led, OUTPUT);
+	pinMode(buzzer, OUTPUT);
+	pinMode(A0, INPUT);
+}
+
+void loop() {
+	pot = analogRead(A0);
+	brightness = map(pot, 0 , 1023, 0, 255);
+
+	analogWrite(led, brightness);
+	if (brightness > 100) {
+		digitalWrite(buzzer, HIGH);
+	} else {
+		digitalWrite(buzzer, LOW);
+	}
+}
+
