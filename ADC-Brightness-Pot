@@ -1,0 +1,31 @@
+const int led = 10;
+const int buzzer = 9;
+int pot;
+int brightness;
+
+void setup() {
+	pinMode(led, OUTPUT);
+	pinMode(buzzer, OUTPUT);
+	pinMode(A0, INPUT);
+
+	Serial.begin(9600);
+}
+
+void loop() {
+	pot = analogRead(A0);
+	brightness = map(pot, 0 , 1023, 0, 255);
+
+	analogWrite(led, brightness);
+	if (brightness > 100) {
+		digitalWrite(buzzer, HIGH);
+	} else {
+		digitalWrite(buzzer, LOW);
+	}
+
+	Serial.print("Potentialmeter: ");
+	Serial.print(pot);
+	Serial.print(" | Brightness: ");
+	Serial.println(brightness);
+	delay(200);
+}
+
